@@ -14,22 +14,22 @@ const students = [
 
 const PASS_MARKS = 40;
 
-// Passed Students
+// Passed students
 const passedStudents = students.filter(student => student.marks >= PASS_MARKS);
 
-// Failed Students
+// Failed students
 const failedStudents = students.filter(student => student.marks < PASS_MARKS);
 
-// Average Marks
+// Average marks
 const averageMarks =
   students.reduce((sum, student) => sum + student.marks, 0) / students.length;
 
-// Topper
+// Find topper
 const topper = students.reduce((top, student) =>
   student.marks > top.marks ? student : top
 );
 
-// Group By Subject
+// Group students by subject
 const groupedBySubject = students.reduce((groups, student) => {
   if (!groups[student.subject]) {
     groups[student.subject] = [];
@@ -38,7 +38,7 @@ const groupedBySubject = students.reduce((groups, student) => {
   return groups;
 }, {});
 
-// Output
+// Print results
 console.log("Passed Students:", passedStudents);
 console.log("Failed Students:", failedStudents);
 console.log("Average Marks:", averageMarks);
